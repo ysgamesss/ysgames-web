@@ -508,6 +508,15 @@ nav ul li a:hover {
     background: linear-gradient(135deg, #ff0000, #cc1818);
 }
 
+/* Estilo especial para la tarjeta de Patreon (¡NUEVO!) */
+.red-card.patreon {
+    background: linear-gradient(135deg, #FF6B6B, #FF424D);
+}
+
+.red-card.patreon:hover {
+    box-shadow: 0 10px 20px rgba(255, 66, 77, 0.4);
+}
+
 .red-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
