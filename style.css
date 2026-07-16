@@ -1,0 +1,577 @@
+/* ==========================================
+   VARIABLES Y ESTILOS GLOBALES
+========================================== */
+:root {
+    --primary-color: #00BFFF;     /* Azul cian de tu logo */
+    --primary-hover: #1e90ff;     /* Azul para estados hover */
+    --bg-overlay: rgba(8, 10, 25, 0.85); /* Capa oscura premium */
+    --card-bg: rgba(22, 24, 35, 0.75);   /* Fondo translúcido para tarjetas */
+    --card-border: rgba(255, 255, 255, 0.08);
+    --text-color: #ffffff;
+    --text-muted: #b3b3b3;
+    --font-main: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main), Arial, sans-serif;
+    color: var(--text-color);
+    /* Fondo gamer original intacto */
+    background-image: url("https://yt3.ggpht.com/QXvFVayo5uvvQqSwvuc8iKWCpcAODBxDd2ClfdZxyDCSSuudsWZzjzrxqnNO8xo6EfKEuhkXGpSWWQ=s640-rw-nd-v1");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    scroll-behavior: smooth;
+    line-height: 1.6;
+    /* Ocultamos cursor original en PCs para usar el personalizado */
+    cursor: none; 
+}
+
+/* Permitir cursor normal en campos de texto */
+input, textarea {
+    cursor: auto;
+}
+
+/* ==========================================
+   INDICADOR DE PROGRESO DE LECTURA (SCROLL)
+========================================== */
+.scroll-indicator-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.1);
+    z-index: 9999;
+}
+
+.scroll-indicator {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--primary-color), #8a2be2);
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+/* ==========================================
+   CURSOR GAMER PERSONALIZADO
+========================================== */
+.custom-cursor {
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 10000;
+    transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s;
+    mix-blend-mode: difference;
+}
+
+.custom-cursor-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 10000;
+}
+
+.custom-cursor.cursor-hover {
+    width: 50px;
+    height: 50px;
+    border-color: #8a2be2;
+    background-color: rgba(138, 43, 226, 0.2);
+    box-shadow: 0 0 15px rgba(138, 43, 226, 0.6);
+}
+
+/* ==========================================
+   BARRA DE NAVEGACIÓN
+========================================== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 25px 0;
+    position: relative;
+    z-index: 100;
+}
+
+.logo {
+    color: var(--primary-color);
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-shadow: 0 0 15px rgba(0, 191, 255, 0.6);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* ==========================================
+   HERO / INICIO
+========================================== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(rgba(8, 10, 25, 0.8), rgba(8, 10, 25, 0.95)), 
+                url("https://yt3.ggpht.com/QXvFVayo5uvvQqSwvuc8iKWCpcAODBxDd2ClfdZxyDCSSuudsWZzjzrxqnNO8xo6EfKEuhkXGpSWWQ=s640-rw-nd-v1");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 80px auto;
+    text-align: left;
+    position: relative;
+    z-index: 10;
+}
+
+.hero-content h1 {
+    font-size: clamp(45px, 8vw, 75px);
+    font-weight: 800;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 25px rgba(0, 191, 255, 0.5);
+}
+
+.hero-description {
+    font-size: clamp(16px, 2.5vw, 20px);
+    color: var(--text-muted);
+    max-width: 700px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 16px 45px;
+    background: var(--primary-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 700;
+    transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 0 25px rgba(0, 191, 255, 0.45);
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    background: var(--primary-hover);
+    box-shadow: 0 0 40px rgba(0, 191, 255, 0.7);
+}
+
+/* Botón Instant Gaming */
+.btn-instant {
+    background: linear-gradient(135deg, #FF5722, #FF9800) !important;
+    box-shadow: 0 0 25px rgba(255, 87, 34, 0.45) !important;
+}
+
+.btn-instant:hover {
+    background: linear-gradient(135deg, #E64A19, #F57C00) !important;
+    box-shadow: 0 0 40px rgba(255, 87, 34, 0.7) !important;
+}
+
+/* ==========================================
+   SECCIÓN VIDEOS (Filtros e Interactividad)
+========================================== */
+.videos {
+    background-color: var(--bg-overlay);
+    text-align: center;
+    padding: 80px 5%;
+}
+
+.videos h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    letter-spacing: 1.5px;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 45px;
+}
+
+.filter-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: var(--font-main);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.video-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    width: 320px;
+    overflow: hidden;
+    transition: all 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
+}
+
+.video-card a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.video-thumbnail-container {
+    position: relative;
+    aspect-ratio: 16/9;
+}
+
+.video-thumbnail-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(11, 12, 16, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.play-overlay i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.video-card:hover .play-overlay {
+    opacity: 1;
+}
+
+.video-info {
+    padding: 20px;
+    text-align: left;
+}
+
+.video-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.tag-gameplay { background-color: #ff3366; }
+.tag-mod { background-color: #8a2be2; }
+
+.video-info h3 {
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+}
+
+.video-info p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* ==========================================
+   SECCIÓN MI SETUP
+========================================== */
+.setup-section {
+    background-color: var(--bg-overlay);
+    padding: 80px 5%;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.setup-section h2 {
+    font-size: 32px;
+    margin-bottom: 45px;
+    letter-spacing: 1.5px;
+}
+
+.setup-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.setup-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 30px 20px;
+    width: 280px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.setup-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.setup-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.setup-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.setup-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 20px rgba(0, 191, 255, 0.15);
+}
+
+/* ==========================================
+   SECCIÓN DISCORD
+========================================== */
+.discord-section {
+    background-color: var(--bg-overlay);
+    padding: 60px 5%;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.discord-banner {
+    max-width: 900px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #5865F2, #404eed);
+    border-radius: 20px;
+    padding: 50px 30px;
+    text-align: center;
+    box-shadow: 0 15px 30px rgba(88, 101, 242, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.discord-logo-giant {
+    font-size: 4.5rem;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.discord-content h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.discord-content p {
+    font-size: 16px;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.btn-discord {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: white;
+    color: #5865F2;
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.btn-discord:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.4);
+}
+
+/* ==========================================
+   SECCIÓN REDES SOCIALES
+========================================== */
+.redes-sociales {
+    background-color: var(--bg-overlay);
+    text-align: center;
+    padding: 80px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.redes-sociales h2 {
+    font-size: 32px;
+    margin-bottom: 35px;
+}
+
+.redes-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.red-card {
+    display: flex;
+    align-items: center;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(10px);
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    color: white;
+    min-width: 250px;
+    transition: all 0.3s ease;
+}
+
+.red-icon {
+    font-size: 1.8rem;
+    margin-right: 15px;
+}
+
+.red-details {
+    text-align: left;
+}
+
+.red-details h3 { font-size: 1.1rem; }
+.red-details span { font-size: 0.8rem; color: var(--text-muted); }
+
+.red-card.instagram {
+    background: linear-gradient(45deg, #833AB4, #C13584, #E1306C, #F77737, #FCAF45);
+}
+
+.red-card.youtube {
+    background: linear-gradient(135deg, #ff0000, #cc1818);
+}
+
+.red-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: rgba(8, 10, 25, 0.95);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #626973;
+}
+
+/* ==========================================
+   DISEÑO ADAPTATIVO (MEDIA QUERIES)
+========================================== */
+@media (max-width: 768px) {
+    body { cursor: auto; }
+    .custom-cursor, .custom-cursor-dot { display: none; }
+
+    nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav ul {
+        gap: 20px;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-description {
+        margin-inline: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .setup-container, .video-container, .redes-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .video-card, .setup-card, .red-card {
+        width: 100%;
+        max-width: 340px;
+    }
+}

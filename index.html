@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YSGAMES</title>
+    
+    <!-- ==========================================
+       SEO Y COMPARTIR EN REDES
+    ========================================== -->
+    <meta property="og:title" content="YSGAMES - Canal de Gameplays y Mods">
+    <meta property="og:description" content="Es un canal dedicado a subir gameplays. ¡Suscríbete, comenta y comparte para apoyar!">
+    <meta property="og:image" content="https://yt3.ggpht.com/QXvFVayo5uvvQqSwvuc8iKWCpcAODBxDd2ClfdZxyDCSSuudsWZzjzrxqnNO8xo6EfKEuhkXGpSWWQ=s640-rw-nd-v1">
+    <meta property="og:type" content="website">
+
+    <!-- ICONO EN LA PESTAÑA DEL NAVEGADOR (FAVICON) -->
+    <link rel="icon" href="https://yt3.ggpht.com/QXvFVayo5uvvQqSwvuc8iKWCpcAODBxDd2ClfdZxyDCSSuudsWZzjzrxqnNO8xo6EfKEuhkXGpSWWQ=s640-rw-nd-v1" type="image/x-icon">
+    
+    <!-- Archivo de estilos -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fuentes profesionales (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Iconos profesionales para redes sociales y componentes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- BARRA DE PROGRESO DE LECTURA (SCROLL INDICATOR) -->
+    <div class="scroll-indicator-container">
+        <div class="scroll-indicator" id="scrollBar"></div>
+    </div>
+
+    <!-- CURSOR GAMER PERSONALIZADO -->
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
+
+    <!-- ===================== -->
+    <!-- BARRA DE NAVEGACIÓN -->
+    <!-- ===================== -->
+    <nav>
+        <div class="logo">
+            YSGAMES
+        </div>
+        <ul class="menu">
+            <li><a href="#inicio" class="hover-target">Inicio</a></li>
+            <li><a href="#videos" class="hover-target">Videos</a></li>
+            <li><a href="#setup" class="hover-target">Mi Setup</a></li>
+            <li><a href="#discord" class="hover-target">Comunidad</a></li>
+            <li><a href="#redes" class="hover-target">Redes</a></li>
+        </ul>
+    </nav>
+
+    <!-- ===================== -->
+    <!-- HERO / INICIO -->
+    <!-- ===================== -->
+    <header class="hero" id="inicio">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>YSGAMES</h1>
+            <p class="hero-description">
+                Es un canal dedicado a subir gameplays. ¡Suscríbete, comenta y comparte con tus amigos para apoyar el proyecto! Aquí siempre serás bienvenido, no olvides dejar tu like en los videos.
+            </p>
+            <div class="hero-buttons">
+                <a href="#videos" class="btn hover-target">
+                    🎮 Ver Últimos Videos
+                </a>
+                <a href="https://www.instant-gaming.com/?igr=gamer-341d521" target="_blank" class="btn btn-instant hover-target">
+                    🔥 Juegos Baratos (-70%)
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===================== -->
+    <!-- SECCIÓN VIDEOS (Con filtros interactivos) -->
+    <!-- ===================== -->
+    <section class="videos" id="videos">
+        <h2>ÚLTIMOS VIDEOS</h2>
+        
+        <!-- Botones de Filtro -->
+        <div class="filter-container">
+            <button class="filter-btn active hover-target" data-filter="all">Todos</button>
+            <button class="filter-btn hover-target" data-filter="gameplays">Gameplays</button>
+            <button class="filter-btn hover-target" data-filter="mods">Mods</button>
+        </div>
+        
+        <div class="video-container">
+            
+            <!-- Video 1 (Categoría: Gameplays) -->
+            <div class="video-card hover-target" data-category="gameplays">
+                <a href="https://youtu.be/gZmUQK95igs" target="_blank">
+                    <div class="video-thumbnail-container">
+                        <img src="https://img.youtube.com/vi/gZmUQK95igs/maxresdefault.jpg" alt="Video 1">
+                        <div class="play-overlay">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-tag tag-gameplay">Gameplay</span>
+                        <h3>Video 1</h3>
+                        <p>Haz clic para verlo en YouTube</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Video 2 (Categoría: Mods) -->
+            <div class="video-card hover-target" data-category="mods">
+                <a href="https://youtu.be/fvj3J5k30cA" target="_blank">
+                    <div class="video-thumbnail-container">
+                        <img src="https://img.youtube.com/vi/fvj3J5k30cA/maxresdefault.jpg" alt="Video 2">
+                        <div class="play-overlay">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-tag tag-mod">Mod</span>
+                        <h3>Video 2</h3>
+                        <p>Haz clic para verlo en YouTube</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Video 3 (Categoría: Gameplays) -->
+            <div class="video-card hover-target" data-category="gameplays">
+                <a href="https://youtu.be/Uy8K6fO6Hzc" target="_blank">
+                    <div class="video-thumbnail-container">
+                        <img src="https://img.youtube.com/vi/Uy8K6fO6Hzc/maxresdefault.jpg" alt="Video 3">
+                        <div class="play-overlay">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <span class="video-tag tag-gameplay">Gameplay</span>
+                        <h3>Video 3</h3>
+                        <p>Haz clic para verlo en YouTube</p>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===================== -->
+    <!-- SECCIÓN MI SETUP -->
+    <!-- ===================== -->
+    <section class="setup-section" id="setup">
+        <h2>MI SETUP GAMER</h2>
+        <div class="setup-container">
+            <div class="setup-card hover-target">
+                <i class="fa-solid fa-microchip setup-icon"></i>
+                <h3>Procesador</h3>
+                <p>AMD Ryzen 7 / Intel Core i7</p>
+            </div>
+            <div class="setup-card hover-target">
+                <i class="fa-solid fa-ghost setup-icon"></i>
+                <h3>Tarjeta Gráfica</h3>
+                <p>NVIDIA RTX 4060 Ti (8GB)</p>
+            </div>
+            <div class="setup-card hover-target">
+                <i class="fa-solid fa-keyboard setup-icon"></i>
+                <h3>Periféricos</h3>
+                <p>Teclado Mecánico RGB & Ratón Pro</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== -->
+    <!-- SECCIÓN DISCORD -->
+    <!-- ===================== -->
+    <section class="discord-section" id="discord">
+        <div class="discord-banner hover-target">
+            <div class="discord-content">
+                <i class="fa-brands fa-discord discord-logo-giant"></i>
+                <h2>¿Quieres jugar con nosotros?</h2>
+                <p>Únete a nuestro servidor de Discord para charlar, compartir mods, enterarte de noticias y participar en salas de voz.</p>
+                <!-- Recuerda cambiar este enlace por la invitación a tu Discord -->
+                <a href="https://discord.gg/" target="_blank" class="btn-discord hover-target">
+                    <i class="fa-solid fa-circle-play"></i> Entrar al Servidor
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== -->
+    <!-- SECCIÓN REDES -->
+    <!-- ===================== -->
+    <section class="redes-sociales" id="redes">
+        <h2>SÍGUEME EN REDES SOCIALES</h2>
+        <div class="redes-container">
+            <!-- Instagram -->
+            <a class="red-card instagram hover-target" href="https://www.instagram.com/ysgamesss/" target="_blank">
+                <div class="red-icon">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div class="red-details">
+                    <h3>Instagram</h3>
+                    <span>@ysgamesss</span>
+                </div>
+            </a>
+
+            <!-- YouTube -->
+            <!-- Recuerda cambiar este enlace por el de tu canal de YouTube real -->
+            <a class="red-card youtube hover-target" href="https://www.youtube.com/" target="_blank">
+                <div class="red-icon">
+                    <i class="fa-brands fa-youtube"></i>
+                </div>
+                <div class="red-details">
+                    <h3>YouTube</h3>
+                    <span>Suscríbete al canal</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===================== -->
+    <!-- FOOTER -->
+    <!-- ===================== -->
+    <footer>
+        <p>© 2026 YSGAMES | Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- ==========================================
+       SCRIPT DE INTERACTIVIDAD
+    ========================================== -->
+    <script>
+        // --- 1. BARRA DE NAVEGACIÓN PROGRESIVA (Scroll Indicator) ---
+        window.onscroll = function() {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("scrollBar").style.width = scrolled + "%";
+        };
+
+        // --- 2. CURSOR GAMER PERSONALIZADO ---
+        const cursor = document.querySelector('.custom-cursor');
+        const cursorDot = document.querySelector('.custom-cursor-dot');
+        const hoverTargets = document.querySelectorAll('.hover-target');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            cursorDot.style.left = e.clientX + 'px';
+            cursorDot.style.top = e.clientY + 'px';
+        });
+
+        hoverTargets.forEach(target => {
+            target.addEventListener('mouseenter', () => {
+                cursor.classList.add('cursor-hover');
+            });
+            target.addEventListener('mouseleave', () => {
+                cursor.classList.remove('cursor-hover');
+            });
+        });
+
+        // --- 3. FILTRO DE VIDEOS INTERACTIVO ---
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const videoCards = document.querySelectorAll('.video-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Cambiar botón activo
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const filterValue = button.getAttribute('data-filter');
+
+                videoCards.forEach(card => {
+                    if (filterValue === 'all') {
+                        card.style.display = 'block';
+                        setTimeout(() => card.style.opacity = '1', 50);
+                    } else {
+                        if (card.getAttribute('data-category') === filterValue) {
+                            card.style.display = 'block';
+                            setTimeout(() => card.style.opacity = '1', 50);
+                        } else {
+                            card.style.opacity = '0';
+                            setTimeout(() => card.style.display = 'none', 300);
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
